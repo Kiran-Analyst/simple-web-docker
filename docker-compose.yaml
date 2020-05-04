@@ -1,0 +1,21 @@
+version: '3'
+services:
+  react-web:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    stdin_open: true    
+  react-web-test:
+    build: 
+      dockerfile: Dockerfile.dev
+      context: .
+    volumes:
+      - .:/app/
+      - /app/node_modules
+    stdin_open: true    
+    command: ["npm", "run","test"]
