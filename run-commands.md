@@ -1,5 +1,6 @@
 
 #### Build and run using Docker File
+--
 
 1. build the docker image
 ```
@@ -42,6 +43,7 @@ docker exec -it <container id> npm run test
 ```
 
 #### Building docker compose file and run
+--
 
 1. run docker compose file
 ``` 
@@ -58,6 +60,7 @@ docker-compose up
 ```
 
 #### Multi Step Build process
+--
 
 1. Use node:alpine to build the application
 2. Use nginx to host the web application
@@ -70,6 +73,18 @@ docker build --rm -t react-web-nginx .
 #nginx default port 80
 docker run -p 8080:80 react-web-nginx
 ```
+
+
+#### Integrate with travis-ci
+--
+
+1. navigate to travis-ci.org
+2. click on sign in add use pton sign in using github
+3. provide permision
+4. Go to account settings and enable project that you wish to used by travis
+
+Note: Travis file extension should be **yml** not yaml
+
 
 
 
