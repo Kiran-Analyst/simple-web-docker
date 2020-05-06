@@ -10,5 +10,7 @@ RUN npm run build
 
 # Run Phase
 FROM nginx
+# expose port for automatic bind on deployment
+EXPOSE 80
 # copy build folder from builder stage
 COPY --from=builder /app/build /usr/share/nginx/html
